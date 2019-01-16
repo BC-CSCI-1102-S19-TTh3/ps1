@@ -1,3 +1,4 @@
+# Windows problems (For Mac problems, see below)
 
 ## Problem: " 'javac' is not recognized as an internal or external command "
 
@@ -34,19 +35,41 @@ git config --global user.name “Your Name”
 If steps 4, 5, or 6 did not work, just use the [GitHub Desktop app](https://desktop.github.com).
 
 # Mac OSX
-"unable to push, error 403"
+## Problem: "unable to push, error 403"
+This usually means that your credentials have not been entered or are incorrect. Here's one possible way to try to deal with this:
+
+1. Open your ps1 directory in Atom as described in the problem set, then go to `Packages -> platformio-ide-terminal -> New Terminal`.
+
+2. In the little terminal window that opens up, type the following
+
+```bash
+git commit -m "making changes"
+```
+
+3. Then type
+
+```bash
+git push
+```
+
+4. If all goes well, you will be asked for your GitHub username and password. You can enter them, and in theory, you won't have to enter them again.
+
+If this does not help, just use the [GitHub Desktop app](https://desktop.github.com).
+
+
 ## Problem: "unable to find remote helper for https"
 
-The issue is that there is a missing dependency for git that arose in a recent OSX update. If you got a lot of chat from your computer about Xcode or developer tools, it was probably your operating system trying to get that missing dependency for you. Here are some possible solutions:
+The issue is that there is a missing dependency for git that arose in a recent OSX update. If you got a lot of chat from your computer about Xcode or developer tools, it was probably your operating system trying to get that missing dependency for you. Here are some possible solutions. (Remember to quit Atom before trying anything.) Here's a way to try to deal with this:
 
-1. Delete you repo that you cloned in class. Then you'll re-clone it using SSH instead of HTTPS. Here's how: when you click on the green `Clone or Download` button in GitHub, in the little window that pops up, you see in the upper right corner `use SSH`. If you click `use SSH`, you'll get a slightly different link. Copy that link, and then clone from that within Atom. Make a change to the java file, and try staging, committing, and pushing your change.
-
-2. An alternative: open a Terminal, and type the following, and then select `Install` and continue to follow the prompts. (Note that this might take a long time!)
+1. open a Terminal, and type the following:
 
 ```bash
 xcode-select --install
 ```
-If neither 1 nor 2 above worked, just use the [GitHub Desktop app](https://desktop.github.com).
+
+2. In the window that pops up, select `Install` and continue to follow the prompts. (Note that this might take a long time!)
+
+If this does not help, just use the [GitHub Desktop app](https://desktop.github.com).
 
 
 
