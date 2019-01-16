@@ -1,5 +1,5 @@
 
-## Problem: "'javac' is not recognized as an internal or external command"
+## Problem: " 'javac' is not recognized as an internal or external command "
 
 The issue is most likely that you have another version of the Java runtime environment (JRE) that is being looked up instead of the version of the Java SE development kit (JDK) that you just installed. There are a couple of possible reasons for this.
 
