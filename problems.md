@@ -34,7 +34,9 @@ git config --global user.name “Your Name”
 
 If steps 4, 5, or 6 did not work, just use the [GitHub Desktop app](https://desktop.github.com).
 
-# Mac OSX
+---
+
+# Mac OSX Problems
 ## Problem: "unable to push, error 403"
 This usually means that your credentials have not been entered or are incorrect. Here's one possible way to try to deal with this:
 
@@ -70,6 +72,28 @@ xcode-select --install
 2. In the window that pops up, select `Install` and continue to follow the prompts. (Note that this might take a long time!)
 
 If this does not help, just use the [GitHub Desktop app](https://desktop.github.com).
+
+## Problem: You already have a different version of Java installed
+
+1. Open a Terminal
+
+2. Type these two commands
+
+```bash
+cd /Library/Java/JavaVirtualMachines
+ls
+```
+3. You'll see multiple version of the Java sdk. Navigate into the `Contents` directory in the version you don't want to use using `cd`, e.g.,
+
+```bash
+cd jdk-10.0.1.jdk/Contents
+```
+
+4. Rename `Info.plist` to `Info.plist.disabled`, like this:
+
+```bash
+mv Info.plist Info.plist.disabled
+```
 
 
 
