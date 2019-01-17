@@ -1,12 +1,28 @@
 # Windows problems (For Mac problems, see below)
 
-## Problem: " 'javac' is not recognized as an internal or external command "
+## Problem: " 'javac' is not recognized as an internal or external command " (*new and improved directions!*)
 
-The issue might be that you have another version of the Java runtime environment (JRE) that is being looked up instead of the version of the Java SE development kit (JDK) that you just installed. There are a couple of possible reasons for this.
+1. Delete *all* copies of Java from your computer by using the [special Java uninstall tool for Windows here](https://www.java.com/en/download/help/uninstall_java.xml).
 
-1. It might be because you did not use `Move Up` to move your new entry to the top of the table in Step 5 of Part 5. Follow all the steps again in Part 5. If you see another entry in the table for Java in your path, (e.g., c:\Program Files\Java\jre-10.0\bin) either delete that other Java entry or just make sure your new entry is higher in the table by using ``Move Up``.
 
-2. It might be that you did move your new entry to the top but you did not enter the path correctly. I noticed that some people decided to install Java in some random place rather than just letting the installer pick the best place. If you did this, delete what you installed and start over again at step 4, allowing the installer install Java where it wants to. Continue with the instructions and make sure that you add an entry to the path environment variable that corresponds exactly to that installation location, which will probably be something like `c:\Program Files\Java\jdk-1.8.201\bin`. Then follow the instructions immediately above in item 1.
+2. Determine whether you have 64 bit (x64)or 32 bit (x86) Windows by following [the directions for Windows 10 here](https://www.wikihow.com/Check-if-Your-Computer-Is-64-Bit).
+
+
+3. [Download the SDK (make sure it’s the SDK!) from here again](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) making sure to select x64 or x86 depending on your results from step 2. Do not try to change the location Java gets installed to. Just let the installer put Java where it likes.
+
+4. Quit any cmd terminals you have open, and quit Atom.
+
+5. Make sure that you have the path to the Java sdk bin directory *exactly* right as follows: (a) navigate in your file system (using Explorer, or whatever it’s called in Windows) to the location where the Java `bin` folder was installed (e.g., `C:\Program Files\Java\jdk1.8.0_201\bin`). **MAKE SURE IT'S JDK and not JRE!!!** (b) Right-click on the `\bin` fodler and choose `Properties`. (c) The path is shown next to the Location header, which you must now highlight and copy.
+
+6. Open your environment variables as described in the problem set, and if you see a JAVA_HOME variable in your environment variables, delete it.
+
+7. Look at the PATH variable. If you see any entry with the word "java" or "Java" or "jre" in it anywhere at all, delete that entry.
+
+8. Add a new entry to the path variable. Paste in what you copied in step 5. If it does not end in `\bin` then add `\bin` to the end, e.g., `C:\Program Files\Java\jdk1.8.0_201\bin`. Make sure it has `\bin`. Make sure it does not have `jre` in it. Onyl `jdk` will work.
+
+9. Launch a cmd terminal and type the `javac -version` and `java -version` commnands to confirm installation.
+
+
 
 ## Problem: "Please tell me who you are" when trying to push to GitHub
 
