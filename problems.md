@@ -111,5 +111,18 @@ cd jdk-10.0.1.jdk/Contents
 mv Info.plist Info.plist.disabled
 ```
 
+# Problem with GitHub Classroom: "GitHub repository could not be created. Please try again"
 
+Some ideas:
 
+1. Reboot your computer.
+
+2. Try another browser (e.g., FireFox).
+
+3. Make sure you're connected to BC's wifi network and not some other network (e.g., tethering to your phone, the wifi at Starbucks).
+
+4. Turn off all VPNs.
+
+5. Clear all website data associated with GitHub anbd GitHub Classroom.
+
+6. Turn off all web browser extensions.
