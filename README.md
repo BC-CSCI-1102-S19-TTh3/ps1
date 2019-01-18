@@ -9,31 +9,43 @@
 1. You might already have some components of Java installed on your computer. Unless you have a very good reason for keeping other versions of Java around, we recommend that you uninstall all existing versions of Java from your computer (instructions: [Mac](https://www.java.com/en/download/help/mac_uninstall_java.xml), [Windows](https://www.java.com/en/download/help/uninstall_java.xml)). 
 
 
-2. Although there are several newer versions of Java, we'll be using Java 8. Download the Java SE Development Kit 8u191 (the last three numbers might be different, that's okay!) for your operating system from [here](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). Don't forget to click the radio button indicating that you agree to the terms of the license.
+2. Although there are several newer versions of Java, we'll be using Java 8. Download the Java SE Development Kit 8u191 (the last three numbers might be different, that's okay!) for your operating system from [here](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). Don't forget to click the radio button indicating that you agree to the terms of the license. If you do not know which version of Windows you have, see below under Windows 10 users.
 
-3. After you download the .dmg (Mac) or .exe (Windows), double-click it to start the installation. Click as needed to complete the installation.
+3. After you download the .dmg (Mac) or .exe (Windows), double-click it to start the installation. Click as needed to complete the installation. Do not try to change the location Java gets installed to. Just let the installer put Java where it likes.
 
 
 ### Part 5: Configure and validate Java installation
-#### Windows 10 users (If you are using Windows 7, proceed at your own risk.)
+#### Special instructions for Windows 10 users (If you are using Windows 7, proceed at your own risk.)
 
-1. Launch ``Control Panel -> (Optional) System and Security -> System``. 
+1. Delete *all* copies of Java from your computer by using the [special Java uninstall tool for Windows here](https://www.java.com/en/download/help/uninstall_java.xml).
 
-2. Click ``Advanced system setting`` in the left pane.
 
-3. Select the ``Advanced`` tab, and click ``Environment Variables`` button.
+2. Determine whether you have 64 bit (x64)or 32 bit (x86) Windows by following [the directions for Windows 10 here](https://www.wikihow.com/Check-if-Your-Computer-Is-64-Bit).
 
-4. Under ``System Variables`` (the bottom pane), the scroll down to select ``Path``, then select ``Edit...``.
 
-5. In Windows 10, you will see a table listing all the existing ``PATH`` entries.  Click ``New`` then enter the JDK's ``bin`` directory, which should be ``c:\Program Files\Java\jdk-1.8.{x}\bin``, where `{x}` is replaced with the version number you installed in Part 4, Step 2, above. You can determine exactly what it is by looking in that directory called `Java`. Then Select ``Move Up`` to move this entry all the way to the top of the table.
+3. [Download the SDK (make sure it’s the SDK!) from here again](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) making sure to select x64 or x86 depending on your results from step 2. Do not try to change the location Java gets installed to. Just let the installer put Java where it likes.
 
-6. Open a CMD shell by clicking the ``Start`` button, then selecting ``Windows System -> Command Prompt``.
+4. Quit any cmd terminals you have open, and quit Atom.
 
-7. Type ``path`` at the prompt, and you should see output that begins like this, where again the {x} is the exact version you installed from Oracle in Part 4, Step 2.
+5. Make sure that you have the path to the Java sdk bin directory *exactly* right as follows: (a) navigate in your file system (using Explorer, or whatever it’s called in Windows) to the location where the Java `bin` folder was installed (e.g., `C:\Program Files\Java\jdk1.8.0_201\bin`). **MAKE SURE IT'S JDK and not JRE!!!** (b) Right-click on the `\bin` fodler and choose `Properties`. (c) The path is shown next to the Location header, which you must now highlight and copy.
 
-``PATH=c:\Program Files\Java\jdk-1.8.{x}\bin;``
+6. Launch ``Control Panel -> (Optional) System and Security -> System``. 
 
-8. Type ``java -version`` and you should see something like this:
+7. Click ``Advanced system setting`` in the left pane.
+
+8. Select the ``Advanced`` tab, and click ``Environment Variables`` button.
+
+9. Under ``System Variables`` (the bottom pane), the scroll down to select ``Path``, then select ``Edit...``.
+
+10. In Windows 10, you will see a table listing all the existing ``PATH`` entries.  Click ``New`` then paste in what you copied in step 5. If it does not end in `\bin` then add `\bin` to the end, e.g., `C:\Program Files\Java\jdk1.8.0_201\bin`. Make sure it has `\bin`. Make sure it does not have `jre` in it. Onyl `jdk` will work.
+
+11. Look at the rest of the entries in the path variable. If you see any entry with the word "java" or "Java" or "jre" in it anywhere at all, delete that entry.
+
+12. Save and close that window. Look in the list of environment variables, and if you see a JAVA_HOME variable in your environment variables, delete it.
+
+13. Open a CMD shell by clicking the ``Start`` button, then selecting ``Windows System -> Command Prompt``.
+
+14. Type ``java -version`` and you should see something like this:
 
 ```java
 
@@ -43,7 +55,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 
 ```
 
-9. Type ``javac -version`` and you should see something like this:
+15. Type ``javac -version`` and you should see something like this:
 
 ```java
 
@@ -51,7 +63,7 @@ javac 1.8.0_191
 
 ```
 
-10. If you get an error message (e.g., "command java not found") or if the numbers are different (e.g., java 1.7...), then something is not right. Email the instructor and the TAs.
+If you get an error message (e.g., "command java not found") or if the numbers are different (e.g., java 1.7...), then something is not right. Try following the instructions more carefully.
 
 #### Max OSX users ####
 1. Launch a Terminal. You can do this by finding the Terminal app in your Applications folder, or by going up to the magnifying glass in the upper right corner of your screen and then searching for Terminal.
