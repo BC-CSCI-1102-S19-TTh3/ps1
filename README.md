@@ -2,6 +2,7 @@
 
 ## Due January 17 @ 11:59pm
 
+## If you run into problems, see the problems.md file in this repository.
 ---
 
 ### Part 4: Download and install Java 8 SDK
@@ -13,19 +14,17 @@
 
 3. After you download the .dmg (Mac) or .exe (Windows), double-click it to start the installation. Click as needed to complete the installation. Do not try to change the location Java gets installed to. Just let the installer put Java where it likes.
 
-
 ### Part 5: Configure and validate Java installation
 #### Special instructions for Windows 10 users (If you are using Windows 7, proceed at your own risk.)
 
-1. Delete *all* copies of Java from your computer by using the [special Java uninstall tool for Windows here](https://www.java.com/en/download/help/uninstall_java.xml).
+1. I am assuming you have deleted *all* copies of Java from your computer by using the [special Java uninstall tool for Windows here](https://www.java.com/en/download/help/uninstall_java.xml). If not, you can give these instructions a try, but if they don't work come back and do this.
 
 
-2. Determine whether you have 64 bit (x64)or 32 bit (x86) Windows by following [the directions for Windows 10 here](https://www.wikihow.com/Check-if-Your-Computer-Is-64-Bit).
+2. If you didn't know which version of Java to install in Part 4, determine whether you have 64 bit (x64)or 32 bit (x86) Windows by following [the directions for Windows 10 here](https://www.wikihow.com/Check-if-Your-Computer-Is-64-Bit). Then [download and install the SDK (make sure it’s the SDK!) from here again](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) making sure to select x64 or x86 depending on your system. Do not try to change the location Java gets installed to. Just let the installer put Java where it likes.
 
+3. Quit any cmd terminals you have open, and quit Atom. 
 
-3. [Download the SDK (make sure it’s the SDK!) from here again](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) making sure to select x64 or x86 depending on your results from step 2. Do not try to change the location Java gets installed to. Just let the installer put Java where it likes.
-
-4. Quit any cmd terminals you have open, and quit Atom.
+4. Just repeating this here: quit any cmd terminals you have open and quit Atom.
 
 5. Make sure that you have the path to the Java sdk bin directory *exactly* right as follows: (a) navigate in your file system (using Explorer, or whatever it’s called in Windows) to the location where the Java `bin` folder was installed (e.g., `C:\Program Files\Java\jdk1.8.0_201\bin`). **MAKE SURE IT'S JDK and not JRE!!!** (b) Right-click on the `\bin` fodler and choose `Properties`. (c) The path is shown next to the Location header, which you must now highlight and copy.
 
